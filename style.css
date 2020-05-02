@@ -5,10 +5,16 @@
 }
 
 header {
-    background-color: darkred;
-    border-bottom: 2px solid black;
+    background-color: #f40005;
+    border-bottom: 4px solid black;
     padding: 30px;
     text-align: center;
+}
+
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2020/03/20/09/22/motorsport-4950078_960_720.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -26,7 +32,9 @@ header {
     margin-top: 50px;
     width: 100%;
     height: 400px;
-    border: 1px solid red;
+    border: 6px solid #f40005;
+    border-radius: 2px;
+    position: relative;
 }
 
 .prev {
@@ -42,6 +50,7 @@ header {
 .prev:hover {
     background-color: darkgrey;
     color: white;
+    cursor: pointer;
 }
 
 .photos {
@@ -50,11 +59,13 @@ header {
     height: 100%;
     background-color: grey;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .photos img {
     width: 100%;
-    object-fit: cover;
     display: none;
 }
 
@@ -76,4 +87,25 @@ header {
     background-color: darkgrey;
     color: white;
     cursor: pointer;
+}
+
+.img-selector {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fa-circle {
+    color: lightgrey;
+    margin: 0px 3px 8px 3px;
+}
+
+.fa-circle:hover {
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.active-dot {
+    color: blue;
 }
