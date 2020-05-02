@@ -45,3 +45,19 @@ $(".prev").click(function() {
         $(".img-selector .fa-circle:last-child").addClass("active-dot");
     }
 })
+
+//Istruzioni per cambiare immagine tramite click su pallino
+$(".fa-circle").click(function() {
+    //Salvo la posizione del pallino cliccato
+    var nth_clicked_dot = $(this).index() + 1;
+    var nth_old_dot = $(".active-dot").index() + 1;
+    console.log(nth_old_dot, nth_clicked_dot);
+
+    //Tolgo l'active dal pallino precedente e lo aggiungo a quello nuovo
+    $(".fa-circle:nth-child(" + nth_old_dot + ")").removeClass("active-dot");
+    $(".fa-circle:nth-child(" + nth_clicked_dot + ")").addClass("active-dot");
+
+    //Tolgo l'active dalla foto vecchia e lo metto a quella cliccata
+    $(".photos img:nth-child(" + nth_old_dot + ")").removeClass("active");
+    $(".photos img:nth-child(" + nth_clicked_dot + ")").addClass("active");
+})
