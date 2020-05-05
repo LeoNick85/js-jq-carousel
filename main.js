@@ -1,9 +1,7 @@
 //Controllo tasti slider
 
 //Interazione per il tasto next
-$(".next").click(function() {
-    next_photo ();
-})
+$(".next").click(next_photo);
 
 //Interazione per il tasto prev
 $(".prev").click(function() {
@@ -57,22 +55,16 @@ $(".autoplay.play").click(function(){
 
 //Interrompo l'autoplay
 $(".autoplay.pause").click(function(){
-
     clearInterval(autoplay_on);
     console.log("pausa");
-
 });
 
 
 //FUNZIONI
 //Funzione per autoplay per far scorrere automaticamente le immagini ogni 3 secondi
 function autoplay() {
-    autoplay_on = setInterval(function() {
-        next_photo();
-    }, 3000);
+    autoplay_on = setInterval(next_photo, 3000);
 };
-
-
 
 //Funzione per passare all'immagine successiva, aggiornando anche il relativo pallino
 function next_photo() {
